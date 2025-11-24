@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmos Typewriter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cutive+Mono&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              mono: ['Cutive Mono', 'monospace'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fly-off': 'fly-off 0.6s ease-in forwards',
+              'fade-in': 'fadeIn 0.2s ease-out',
+            },
+            keyframes: {
+              'fly-off': {
+                '0%': { transform: 'translateY(0) rotateX(5deg)', opacity: '1' },
+                '100%': { transform: 'translateY(-600px) rotateX(40deg) rotateZ(-20deg)', opacity: '0' },
+              },
+              fadeIn: {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #050510;
+        overflow: hidden;
+      }
+      .perspective-1000 { perspective: 1000px; }
+      .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(100, 100, 100, 0.4); border-radius: 3px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
